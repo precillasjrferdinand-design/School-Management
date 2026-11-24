@@ -1,0 +1,84 @@
+:root{
+  --bg:#eceff1; --surface:#fff; --ink:#1f262d; --muted:#5f6b76; --line:#d3d9de;
+  --brand:#2b5d7e; --brand-dark:#214a65; --danger:#a8342c; --ok:#2e6b45; --warn-bg:#fff6dd;
+}
+*{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.55 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+a{color:var(--brand)}
+h1{font-size:1.5rem;margin:0 0 .25rem;font-weight:600}
+h2{font-size:1.1rem;margin:0 0 .75rem;font-weight:600}
+p{margin:0 0 1rem}
+.muted{color:var(--muted)}
+
+.topbar{background:var(--surface);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:960px;margin:0 auto;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1.5rem}
+.brand{font-weight:700;text-decoration:none;color:var(--ink);margin-right:auto}
+.topbar a.nav{text-decoration:none;color:var(--muted)}
+.topbar a.nav:hover{color:var(--ink)}
+.inline{display:inline;margin:0}
+
+.wrap{max-width:960px;margin:0 auto;padding:1.75rem 1.25rem 3rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1.25rem}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.25rem}
+
+/* auth */
+.bg-ncc{min-height:100vh;background:#1d2b4a url("../images/bg-ncc-image.png") left center/cover no-repeat fixed}
+.bg-dash{min-height:100vh;background:#b9cfdc url("../images/dash-bg.jpg") center/cover no-repeat fixed}
+/* form sits on the right so the school seal on the left stays visible */
+.auth{width:100%;max-width:440px;margin:0 6vw 0 auto;padding:0 1.25rem;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.auth .brand-big{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.auth .panel{box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.auth .brand-big{font-weight:700;font-size:1.15rem;margin-bottom:1.25rem;display:block}
+.auth .panel{padding:1.5rem}
+.auth .alt{margin:1rem 0 0;font-size:.95rem}
+
+/* forms */
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:.25rem}
+input[type=text],input[type=email],input[type=password],input[type=number],input[type=tel]{
+  width:100%;padding:.55rem .65rem;border:1px solid #aeb7be;border-radius:4px;font:inherit;background:#fff;color:inherit}
+input:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--brand);outline-offset:1px}
+.field{margin-bottom:1rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.err{color:var(--danger);font-size:.88rem;margin:.3rem 0 0}
+.has-err input{border-color:var(--danger)}
+.check{display:flex;align-items:center;gap:.5rem;font-weight:400;margin-bottom:.35rem}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0 1rem}
+
+.btn{display:inline-block;background:var(--brand);color:#fff;border:0;border-radius:4px;padding:.55rem 1rem;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--brand-dark)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.btn.block{width:100%}
+.btn.ghost{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+.btn.ghost:hover{background:#e8f0f5}
+.btn.danger{background:transparent;color:var(--danger);border:1px solid var(--danger)}
+.btn.danger:hover{background:#fbeceb}
+.btn.small{padding:.3rem .65rem;font-size:.9rem}
+
+/* messages */
+.flash{padding:.65rem .9rem;border-radius:4px;margin-bottom:1.25rem;border:1px solid}
+.flash.ok{background:#eaf5ee;border-color:#b9d9c4;color:var(--ok)}
+.flash.warn{background:var(--warn-bg);border-color:#ecd68a}
+
+/* dashboard */
+.stats{display:flex;gap:1.5rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:.8rem 1.1rem;min-width:140px}
+.stat b{font-size:1.6rem;display:block;line-height:1.2}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:.6rem .5rem;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-weight:600;color:var(--muted);font-size:.88rem}
+tr:last-child td{border-bottom:0}
+.empty{padding:1.5rem 0;text-align:center}
+.pager{margin-top:1rem}
+.pager nav svg{width:1rem;height:1rem}
+
+/* student page */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+dl{margin:0;display:grid;grid-template-columns:90px 1fr;gap:.35rem 1rem}
+dt{color:var(--muted)} dd{margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0;list-style:none}
+.tags li{border:1px solid var(--line);border-radius:3px;padding:.1rem .5rem;font-size:.9rem;background:#f7f8f9}
+
+@media (max-width:900px){.auth{margin:0 auto}}
+@media (max-width:680px){.row,.cols{grid-template-columns:1fr}.head{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
